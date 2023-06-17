@@ -5,13 +5,13 @@
     @foreach ($products as $product)
     <h2 class="alert alert-primary">Shoes Shop</h2>
     
-    <section class="card card-blue">
+    <section class="card card-blue" style="text-align:center"; >
     
       <div class="product-image">
         <img src={{ asset('img/'.$shop->img) }} alt="OFF%-Edition" draggable="false" />
       </div>
       <div class="product-info">
-        <h2>{{ $shop->name }}</h2>
+        <h2>{{ $shop->title }}</h2>
         
         <p>{{$shop->address}}</p>
 

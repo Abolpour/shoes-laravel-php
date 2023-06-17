@@ -62,6 +62,7 @@
                          <option value="{{ $shop->id }}" selected > {{ $shop->title }}</option> 
                          @else
                          <option value="{{ $shop->id }}">{{ $shop->title }}</option> 
+                       
                          @endif   
                         
                           @endforeach

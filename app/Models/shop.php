@@ -9,6 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class shop extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','img','address'];
+    protected $fillable = ['title','img','address','counter','is_slide'];
 
 }

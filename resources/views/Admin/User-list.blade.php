@@ -16,7 +16,7 @@
           <!-- /.card-header -->
           <div class="card-body">
             
-          <a href="{{ route('User-Create') }}" type="button" class="btn  btn-warning btn-lg">Create</a>
+          {{-- <a href="{{ route('User-Create') }}" type="button" class="btn  btn-warning btn-lg">Create</a> --}}
          
           <table id="example1" class="table table-bordered table-striped">
               <thead>
@@ -24,7 +24,7 @@
                 <th>id</th>
                 <th>user</th>
                 <th>pass</th>
-                <th>Edit</th>
+                {{-- <th>Edit</th> --}}
                 <th>Delete</th>
               </tr>
               </thead>
@@ -32,9 +32,9 @@
               @foreach ($users as $user)
                 <tr>
                 <td>{{ $user->id }}</td>
-                <td> {{ $user->user }}</td>
-                <td>{{ $user->pass }}</td>
-                <td><a href= {{ route('User-Edit',['id'=>$user->id ]) }} >Edit</a> </td>
+                <td> {{ $user->name }}</td>
+                <td>{{ $user->password }}</td>
+                {{-- <td><a href= {{ route('User-Edit',['id'=>$user->id ]) }} >Edit</a> </td> --}}
                 <td><a href= {{ route('User-Delete',['id'=>$user->id ]) }} >Delete</a> </td>
               </tr>
                    
@@ -44,7 +44,7 @@
                 <th>id</th>
                 <th>user</th>
                 <th>pass</th>
-                <th>Edit</th>
+                {{-- <th>Edit</th> --}}
                 <th>Delete</th>
               </tr>
               </thead>

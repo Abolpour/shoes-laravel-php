@@ -25,13 +25,13 @@
                      <input type="hidden" name="id" value="{{ $user->id }}">;
                   <div class="card-body">
                     <div class="form-group">
-                      <label for="user">Name</label>
-                      <input type="text" name="user" class="form-control" id="user" value="{{ $user->user }}" placeholder="user ...">
+                      <label for="name">Name</label>
+                      <input type="text" name="name" class="form-control" id="name" value="{{ $user->user }}" placeholder="user ...">
                     </div>
                     
                     <div class="form-group">
-                      <label for="pass"> password </label>
-                      <input type="text" name="pass" class="form-control" id="pass" value="{{ $user->pass }}" placeholder="password ...">
+                      <label for="password"> password </label>
+                      <input type="text" name="password" class="form-control" id="password" value="{{ $user->pass }}" placeholder="password ...">
                     </div>
                            
                         

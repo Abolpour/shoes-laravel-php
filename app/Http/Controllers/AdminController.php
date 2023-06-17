@@ -42,20 +42,23 @@ function ShopsCreate(){
 }
 function Shopsinsert(Request $request){
     $request->validate([
-        'name'=>'required | min:4 |max:20',
+        
         'img'=>'required |mimes:png,jpg',
-        'address'=>'max:500'
+        
     ]);
 
     $title=$request->input('title');
+    
     $address=$request->input('address');
     $img=time().'-'. $request->file('img')->getClientOriginalName();
     $request->file('img')->move(public_path('img'),$img);
+    $is_slide=$request->input('is_slide');
 
    shop::Create([
     'title'=>$title,
     'address'=>$address,
-    'img'=>$img
+    'img'=>$img,
+    'is_slide'=>$is_slide
     ]);
        return redirect(route('Shops-List'));
        
@@ -83,8 +86,8 @@ function Userinsert(Request $request){
     ]);
 
     User::Create([
-        'user'=>$request->input('user'),
-        'pass'=>$request->input('pass')
+        'name'=>$request->input('name'),
+        'password'=>$request->input('password')
         ]);
            
        
@@ -117,6 +120,7 @@ public function ShopsEdit($id){
     return view('Admin.Shops-Edit',['shope'=>$shope]);
 }
 public function ShopsUpdate(request $request){
+    $is_slide=$request->input('is_slide');
     $title=$request->input('title');
     $address=$request->input('address');
     $img=time().'-'. $request->file('img')->getClientOriginalName();
@@ -125,7 +129,8 @@ public function ShopsUpdate(request $request){
     ->update([
         'title'=>$title,
         'address'=>$address,
-        'img'=>$img
+        'img'=>$img,
+       'is_slide'=>$is_slide ??0
 
 ]);
        
@@ -173,8 +178,8 @@ public function UserUpdate(request $request){
     
     ->update([
         
-    'user'=>$request->input('user'),
-'pass'=>$request->input('pass'),
+    'name'=>$request->input('name'),
+'password'=>$request->input('password'),
 
 
 ]);

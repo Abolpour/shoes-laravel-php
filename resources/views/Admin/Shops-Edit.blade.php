@@ -30,10 +30,16 @@
                     <div class="form-group">
                         <label for="img">image</label>
                         <input type="file" name="img" class="form-control" value= {{  $shope->img}}  id="img" placeholder="image">
+                        <img src="{{ asset('img/'.$shope->img) }}" width="60" height="60" alt="">
                       </div>
                     <div class="form-group">
                       <label for="address"> ADDRESS </label>
                       <textarea name="address" id="address" class="form-control"  rows="3" placeholder="ADDRESS ...">{{ $shope->address }}</textarea> 
+                    </div>
+                    <div class="form-group">
+                     
+                      <label for="slide"> is slide ??? </label>
+                      <input type="checkbox" name="is_slide" class="form-control" id="slide" value=1  {{ $shope->is_slide==1 ? 'checked' : '' }}> 
                     </div>
                            
                         

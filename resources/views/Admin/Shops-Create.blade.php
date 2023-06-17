@@ -45,6 +45,12 @@
                       <label for="address"> ADDRESS </label>
                       <textarea name="address" id="address" class="form-control" rows="3" placeholder="ADDRESS ..."></textarea> 
                     </div>
+
+                    <div class="form-group">
+                     
+                      <label for="slide"> is slide ??? </label>
+                      <input type="checkbox" name="is_slide" class="form-control" id="slide" value=1> 
+                    </div>
                            
                         
                   <!-- /.card-body -->

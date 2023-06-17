@@ -27,13 +27,13 @@
                       @error('user')
                         <span>user already taken use another</span>
                       @enderror
-                      <label for="user">Name</label>
-                      <input type="text" name="user" class="form-control" id="user" placeholder="user ...">
+                      <label for="name">Name</label>
+                      <input type="text" name="name" class="form-control" id="name" placeholder="user ...">
                     </div>
                     
                     <div class="form-group">
-                      <label for="pass"> password </label>
-                      <textarea name="pass" id="pass" class="form-control" rows="3" placeholder="pass ..."></textarea> 
+                      <label for="password"> password </label>
+                      <textarea name="password" id="password" class="form-control" rows="3" placeholder="pass ..."></textarea> 
                     </div>
                            
                         
