@@ -24,7 +24,7 @@
     </div>
     @endforeach
     @php
-      $counter++;
+      // $counter++;
     @endphp
     <div class="carousel-item">
       <img src="{{ asset('img/2.png') }}" class="d-block w-100" style="height: 500px" alt="ExampleCaptions...">
@@ -64,7 +64,7 @@
     <div class='card-body'>
   
 <h2><a href={{ route('shop',['id'=>$shop->id]) }}>go to shop</h2>
-       <h5 class='card-title'> {{ $shop->name }}</h5>
+       <h5 class='card-title'> {{ $shop->title }}</h5>
     </a>
     <img src="{{ asset('img/'.$shop->img) }}" width="200" height="100" alt="">
     
@@ -92,7 +92,7 @@
     <div class='card-body'>
   
 <h2><a href={{ route('shop',['id'=>$shop->id]) }}>go to shop</h2>
-       <h5 class='card-title'> {{ $shop->name }}</h5>
+       <h5 class='card-title'> {{ $shop->title }}</h5>
     </a>
     <img src="{{ asset('img/'.$shop->img) }}" width="200" height="100" alt="">
     
@@ -118,7 +118,7 @@
         <div class='card-body'>
       
     <h2><a href={{ route('shop',['id'=>$shop->id]) }}>go to shop</h2>
-           <h5 class='card-title'> {{ $shop->name }}</h5>
+           <h5 class='card-title'> {{ $shop->title }}</h5>
         </a>
         <img src="{{ asset('img/'.$shop->img) }}" width="200" height="100" alt="">
         
@@ -137,19 +137,17 @@
         <div  class="row" style="margin: 15%">
             <h2> shoes model tags</h2>
             <hr>
+            
             @foreach ($categories as $category)
             
         
-            <div class="row mt-1 ms-1"style='width:15rem;'> 
-            <div class='card-body'>
-          
-        <h2><a href='#'>{{ $category->name }}</h2>
-               
-            </a>
-             
-                      </div> 
+           
+              
+        <a href={{ route('category',['id'=>$category->id]) }}>{{ $category->name }}</a>
+                    
             
-           </div>
+             
+              
            @endforeach
             
         

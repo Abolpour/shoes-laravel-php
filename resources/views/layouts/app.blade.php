@@ -47,7 +47,7 @@
 
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('Admin') }}">{{ __('Admin') }}</a>
+                                    <a class="nav-link" href="{{ route('Admin') }}">{{ __('PanelAdmin') }}</a>
                                 </li>
                             @endif
 
@@ -76,13 +76,21 @@
                                     </a>
                                     @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('Admin') }}">{{ __('Admin') }}</a>
+                                    <a class="nav-link" href="{{ route('Admin') }}">{{ __('PanelAdmin') }}</a>
                                 </li>
                                      @endif
                                   
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    <div class="form-control">
+                                        <form action="{{ route('search') }}"class='GET' >
+                                           <input type="text" name='q' class="search" placeholder="What are you looking for?">
+                                           <input type="submit" name='search' value="Search">
+                                            
+                                         
+                                        </form>
+                                     </div>
                                 </div>
                             </li>
                         @endguest

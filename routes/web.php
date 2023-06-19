@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BasketController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,16 @@ use Illuminate\Support\Facades\Auth;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+route::get('/checkout/{user_id}',[BasketController::class,'checkout'])->name('checkout');
+
+route::get('/basket/add/{product_id}/{shope_id}',[BasketController::class,'add'])->name('basket.add');
+
 route::get('/',[HomeController::class,'Home'])->name('home');
+
+route::get('/category/{id}',[HomeController::class,'category'])->name('category');
+
+route::get('/search',[HomeController::class,'search'])->name('search');
+
 route::get('/shop/{id}',[HomeController::class,'shop'])->name('shop');
 
 route::get('/Admin',[AdminController::class,'Admin'])->name('Admin')->middleware(['auth','auth.role.admin']);

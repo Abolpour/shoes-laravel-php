@@ -108,7 +108,7 @@ function Productinsert(Request $request){
 'name'=>$request->input('name'),
 'price'=>$request->input('price'),
 'category_id'=>$request->input('category'),
-'shope_id'=>$request->input('shope')
+'shope_id'=>$request->input('shop')??0
 ]);
        
        return redirect(route('Product-List'));
