@@ -37,7 +37,7 @@ function shop($id,request $request){
     $categories=Category::all();
     $baskets=null;
     if(Auth::user()){
-        $baskets=productbasket::where('user_id','=',Auth::user()->id)->get();
+        $baskets=productbasket::where('user_id','=',Auth::user()->id)->where('is_paying','=',0)->get();
     }
    
     if ($request->get('category')) {

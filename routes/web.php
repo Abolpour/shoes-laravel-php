@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Auth;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+route::get('/basket/Delete/{id}',[BasketController::class,'Delete'])->name('basket.Delete');
+
+
 route::get('/checkout/{user_id}',[BasketController::class,'checkout'])->name('checkout');
 
 route::get('/basket/add/{product_id}/{shope_id}',[BasketController::class,'add'])->name('basket.add');

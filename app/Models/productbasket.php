@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class productbasket extends Model
 {
     use HasFactory;
-    protected $fillable=['product_id','shope_id','count','user_id','basket_id'];
+    protected $fillable=['product_id','shope_id','count','user_id','basket_id','is_paying'];
     public function shop(){
         return $this->belongsTo(Shop::class)->first();
     }

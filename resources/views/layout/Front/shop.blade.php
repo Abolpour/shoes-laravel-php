@@ -3,11 +3,12 @@
 <main class="container"  >
 
   <div class="row">
-    <a href="#"class='btn btn-warning'>pay price</a>
+    <a href={{ route('checkout',['user_id'=>Auth::user()->id]) }} class='btn btn-warning' >pay price</a>
     @foreach ($baskets as $basket)
     <h2>name:{{ $basket->product()->name }}</h2>
     <h2>count:{{ $basket->count }}</h2>
     <h2>price:{{ $basket->product()->price }}</h2>
+    <a href={{route('basket.Delete',['id'=>$basket->id]) }}>Delete</a>
     @endforeach
    </div>
     @foreach ($products as $product)
@@ -28,7 +29,7 @@
       @if (Auth::user())
       
      
-        <a class="buy-btn" href={{ route('shop',['id'=>$shop->id]) }}>Buy Now</a>
+        <a class="buy-btn" href={{ route('checkout',['user_id'=>Auth::user()->id]) }}>Buy Now</a>
         <a class="fav" href={{ route('basket.add',['product_id'=>$product->id, 'shope_id'=>$shop->id]) }}>add</a>
         
      
