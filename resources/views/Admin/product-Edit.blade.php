@@ -25,7 +25,7 @@
                     <div class="card-body">
                       <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control" id="name" value="{{ $Product->name }}" placeholder="Name" >
+                        <input type="text" name="name" class="form-control" id="name" value={{ $Product->name }} placeholder="Name" >
                       </div>
                      
                       <div class="form-group">

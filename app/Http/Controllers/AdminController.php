@@ -108,7 +108,7 @@ function Productinsert(Request $request){
 'name'=>$request->input('name'),
 'price'=>$request->input('price'),
 'category_id'=>$request->input('category'),
-'shope_id'=>$request->input('shop')??0
+'shope_id'=>$request->input('shop')
 ]);
        
        return redirect(route('Product-List'));
@@ -194,11 +194,11 @@ public function UserDelete($id){
 
 public function ProductEdit($id){
 
-    $product=Product::findorfail($id);
+    $products=Product::findorfail($id);
     $categories=Category::all();
     $shops=shop::all();
    
-    return view('Admin.Product-Edit',['Product'=>$product ,'categories'=>$categories, 'shops'=>$shops ]);
+    return view('Admin.Product-Edit',['products'=>$products ,'categories'=>$categories, 'shops'=>$shops ]);
 }
 
 public function ProductUpdate(request $request){
@@ -207,7 +207,7 @@ public function ProductUpdate(request $request){
         'name'=>$request->input('name'),
         'price'=>$request->input('price'),
         'category_id'=>$request->input('category'),
-        'shope_id'=>$request->input('shope')
+        'shope_id'=>$request->input('shop')
     ]);
      
           return redirect(route('Product-List'));

@@ -2,6 +2,11 @@
 
 @section('content')
 
+<div  class="video">
+  <video width="100%" height="150%" loop autoplay muted>
+    <source src="{{ asset('img/shop.mp4') }}" type="video/mp4">
+    </div>
+      </video>
 
 
 @foreach ($slidershops as $slider)
@@ -24,9 +29,9 @@
     </div>
     @endforeach
     @php
-      // $counter++;
+       $counter++;
     @endphp
-    <div class="carousel-item">
+    <div class="carousel-item " >
       <img src="{{ asset('img/2.png') }}" class="d-block w-100" style="height: 500px" alt="ExampleCaptions...">
       <div class="carousel-caption d-none d-md-block">
         <h5 style="color:black">Second slide label</h5>
