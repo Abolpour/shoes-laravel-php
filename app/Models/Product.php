@@ -11,7 +11,7 @@ class Product extends Model
 
     protected $fillable = ['name','price','category_id','shope_id','title'];
 
-    public function shop(){
+    public function shope(){
         return $this->belongsTo(shop::class)->first();
     }
     public function category(){

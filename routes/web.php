@@ -31,7 +31,7 @@ route::get('/category/{id}',[HomeController::class,'category'])->name('category'
 
 route::get('/search',[HomeController::class,'search'])->name('search');
 
-route::get('/shop/{id}',[HomeController::class,'shop'])->name('shop');
+route::get('/shop/{id}',[HomeController::class,'shop'])->name('shop')->middleware(['auth','auth.role.admin']);
 
 route::get('/Admin',[AdminController::class,'Admin'])->name('Admin')->middleware(['auth','auth.role.admin']);
 

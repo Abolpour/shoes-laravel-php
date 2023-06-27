@@ -70,7 +70,7 @@
                         
                         </select>
                       </div>
-                          
+                          <input type="hidden" name="id" value="{{ $Product->id }}">
                     <!-- /.card-body -->
                     <div class="card-footer">
                       <button type="submit" class="btn btn-primary">Submit</button>

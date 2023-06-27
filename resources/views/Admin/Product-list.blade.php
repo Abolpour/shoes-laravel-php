@@ -40,7 +40,7 @@
               <td>{{$product->name }}</td>
               <td>{{$product->price }}</td>
               <td>{{$product->category()->name}}</td>
-              <td>{{$product->shop()->title??0}}</td>
+              <td>{{$product->shope()->title}}</td>
               <td><a href={{route('Product-Edit',['id'=>$product->id ])}} >Edit</a></td>
               <td><a href={{route('Product-Delete',['id'=>$product->id ])}} >Delete</a></td>
               </tr>

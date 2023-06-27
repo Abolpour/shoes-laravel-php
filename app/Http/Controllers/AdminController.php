@@ -194,11 +194,11 @@ public function UserDelete($id){
 
 public function ProductEdit($id){
 
-    $products=Product::findorfail($id);
+    $products=Product::findOrFail($id);
     $categories=Category::all();
     $shops=shop::all();
    
-    return view('Admin.Product-Edit',['products'=>$products ,'categories'=>$categories, 'shops'=>$shops ]);
+    return view('Admin.Product-Edit',['Product'=>$products ,'categories'=>$categories, 'shops'=>$shops ]);
 }
 
 public function ProductUpdate(request $request){
@@ -210,7 +210,7 @@ public function ProductUpdate(request $request){
         'shope_id'=>$request->input('shop')
     ]);
      
-          return redirect(route('Product-List'));
+        return redirect(route('Product-List'));
 }
 public function ProductDelete($id){
     Product::findorfail($id)->delete();
